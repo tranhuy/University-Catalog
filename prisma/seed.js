@@ -1,7 +1,5 @@
-const { PrismaClient } = require('@prisma/client');
+const prisma = require('./db');
 const axios = require('axios');
-
-const prisma = new PrismaClient();
 
 (async() => {
     try {
@@ -46,13 +44,11 @@ const prisma = new PrismaClient();
                     }
                 })
             }
-        }));
-
-        console.log('Database seeding complete!');      
+        }));      
     } catch (err) {
         console.error(err);
         process.exit(1);
     } finally {
-        await prisma.$disconnect();
+        //await prisma.$disconnect();
     }
 })();
