@@ -45,6 +45,7 @@ const axios = require('axios');
                 })
             }
         }));      
+        console.log('Completed seeding database tables!!');
     } catch (err) {
         console.error(err);
         process.exit(1);
