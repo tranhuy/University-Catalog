@@ -4,7 +4,7 @@
 
 tasks:
     - name: DB Migration
-      init: yarn && prisma init --url mysql://htran:Password123!@localhost:3306/db_university
+      init: yarn install
       command: yarn prisma migrate dev --name migration
     - name: DB Seeding
       command: yarn seed
