@@ -47,7 +47,7 @@ const UniversityList = ({ universities, universityTotal }) => {
     return (
         <>
             <div className='border-4 border-b-0 border-sky-800'>
-                <header id='gridHeader' className='grid grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_2fr)_minmax(0,_2fr)] p-2 pr-6 gap-x-2 font-bold text-white bg-sky-800'>
+                <header id='gridHeader' className='grid grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_2fr)_minmax(0,_2fr)] p-2 gap-x-2 font-bold text-white bg-sky-800'>
                     <div>Name</div>
                     <div>State/Province</div>
                     <div>Country</div>
