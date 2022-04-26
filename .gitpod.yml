@@ -4,15 +4,9 @@
 
 tasks:
     - name: DB Migration
-      init: yarn install
-      command: yarn prisma migrate dev --name migration
-    - name: DB Seeding
-      command: yarn seed
-      openMode: split-left
-    - name: Build and Start app
-      init: yarn build
-      command: yarn start
-      openMode: split-right
+      before: yarn install
+      init: yarn prisma migrate dev --name migration && yarn seed
+      command: yarn build && yarn start
 
 ports:
   # MySQL
