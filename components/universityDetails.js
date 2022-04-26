@@ -1,6 +1,6 @@
 const UniversityDetails = ({ university }) => {
     return (
-        <div className={`grid grid-cols-6 gap-x-2 p-1 ${university.domains.length > 1 && 'bg-sky-900/10'} items-center border-b-2 last:border-b-0`}>
+        <div className={`grid grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)_minmax(0,_1fr)_minmax(0,_2fr)_minmax(0,_2fr)] gap-x-2 h-fit px-2 py-1 ${university.domains.length > 1 && 'bg-sky-900/10'} items-center border-b-2 last:border-b-0`}>
 			<div>{university.name}</div>
 			<div>{university.state_province}</div>
 			<div>{university.country}</div>

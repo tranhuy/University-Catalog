@@ -19,7 +19,7 @@ export default function SubPage({ universities, total }) {
 				<meta name="description" content="Catalog of all Universities around the world" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className='border-4 border-sky-800'>
+			<main>
 				<UniversityList universities={universities} universityTotal={total} />
 			</main>
 		</div>
@@ -53,9 +53,10 @@ export async function getStaticProps({ params }) {
 				select: { id: true, url: true }
 			}
 		},
-		orderBy: {
-			name: 'asc'
-		},
+		orderBy: [
+			{ country: 'asc' },
+			{ name: 'asc' }
+		],
         skip: pageOffset * 20,
 		take: 20
 	});
@@ -65,7 +66,7 @@ export async function getStaticProps({ params }) {
 	return {
 		props: {
 			universities,
-			total
+			total,
 		}
 	}
 }
