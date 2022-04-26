@@ -12,7 +12,7 @@ tasks:
         yarn seed
         gp sync-done setup
     - name: Build and Start App
-      init: gp sync-wait setup
+      init: gp sync-await setup
       command: yarn build && yarn start
 
 ports:
