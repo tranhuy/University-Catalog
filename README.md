@@ -1,12 +1,12 @@
 # University Catalog
 
-## Environment Setup
-
 ## Technologies Used
 - Next.js
 - TailwindCSS
 - Prisma ORM
 - MySQL database
+
+## Environment Setup
 
 ### __Prerequisites__
 1) PHP installed
