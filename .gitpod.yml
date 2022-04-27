@@ -6,8 +6,8 @@ image:
 
 tasks:
     - name: DB Migration and Seeding
-      before: bash db_init.sh
-      init: yarn install && yarn prisma migrate dev --name migration
+      before: yarn install
+      init: bash db_init.sh && yarn prisma migrate dev --name migration
       command: > 
         yarn seed
         gp sync-done setup
