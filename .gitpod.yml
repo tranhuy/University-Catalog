@@ -5,16 +5,9 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-    - name: DB Migration and Seeding
-      before: yarn install
-      init: bash db_init.sh && yarn prisma migrate dev --name migration
-      command: > 
-        yarn seed
-        gp sync-done setup
-    - name: Build and Start App
-      init: gp sync-await setup
+    - before: yarn install
+      init: bash db_init.sh && yarn prisma migrate dev --name migration && yarn seed
       command: yarn build && yarn start
-      openMode: split-right
 
 ports:
   # MySQL
@@ -22,6 +15,6 @@ ports:
     onOpen: ignore
   # React dev server
   - port: 3000
-    onOpen: open-preview
+    onOpen: open-browser
 
 
