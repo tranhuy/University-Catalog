@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model University {
+model university {
   id             Int     @id @default(autoincrement())
   country        String? @db.VarChar(255)
   alpha_two_code String? @db.VarChar(255)
@@ -18,14 +18,14 @@ model University {
 
 }
 
-model Domain {
+model domain {
   id            Int     @id @default(autoincrement())
   id_university Int?
   domain_name   String? @db.VarChar(255)
   university University? @relation(fields: [id_university], references: [id])
 }
 
-model Website {
+model website {
   id            Int    @id @default(autoincrement())
   id_university Int
   url           String @db.VarChar(2083)
