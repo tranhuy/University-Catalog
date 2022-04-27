@@ -15,6 +15,6 @@ ports:
     onOpen: ignore
   # React dev server
   - port: 3000
-    onOpen: open-preview
+    onOpen: open-browser
 
 
