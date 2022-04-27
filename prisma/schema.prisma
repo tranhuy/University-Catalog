@@ -13,8 +13,8 @@ model university {
   alpha_two_code String? @db.VarChar(255)
   name           String? @db.VarChar(255)
   state_province String? @map("state-province") @db.VarChar(255)
-  domains Domain[]
-  websites Website[]
+  domains domain[]
+  websites website[]
 
 }
 
@@ -22,12 +22,12 @@ model domain {
   id            Int     @id @default(autoincrement())
   id_university Int?
   domain_name   String? @db.VarChar(255)
-  university University? @relation(fields: [id_university], references: [id])
+  university university? @relation(fields: [id_university], references: [id])
 }
 
 model website {
   id            Int    @id @default(autoincrement())
   id_university Int
   url           String @db.VarChar(2083)
-  university University @relation(fields: [id_university], references: [id])
+  university university @relation(fields: [id_university], references: [id])
 }
